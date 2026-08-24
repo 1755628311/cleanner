@@ -279,3 +279,27 @@ strong {
     padding: 26px 24px;
   }
 }
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  padding-right: 1.25rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] h2::before {
+  order: 1;
+}
+
+html[dir="rtl"] .notice {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero-meta,
+html[dir="rtl"] .brand {
+  flex-direction: row-reverse;
+}
