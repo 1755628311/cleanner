@@ -84,9 +84,10 @@
     <h3>3.4 Device and technical information</h3>
     <ul>
       <li>Device model, operating system version, language, and app version</li>
-      <li>Network connectivity status (e.g., Wi‑Fi or mobile data available) when needed for optional online functions</li>
-      <li>Bluetooth state only if required by system APIs for related device status features declared in the App</li>
-      <li>Approximate location information only if required by the Android system or declared permissions for specific device/network status features — we do not use location for tracking or advertising</li>
+      <li>Network connectivity status (e.g., Wi‑Fi or mobile data available) for optional online features and device/network status display</li>
+      <li>Wi‑Fi state (ACCESS_WIFI_STATE) for network-related information on the System Info screen</li>
+      <li>Bluetooth on/off state for device status display on the System Info screen — not used for advertising or tracking</li>
+      <li>Location services status and approximate location-related information for System Info and Security Tips features — <strong>not used for advertising, profiling, or unrelated tracking</strong></li>
     </ul>
 
     <h3>3.5 Information you provide to us</h3>
@@ -108,7 +109,9 @@
       <li>Display storage summaries, cleanup recommendations, and optimization suggestions</li>
       <li>Perform scanning, cleaning, compression, or deletion actions you confirm</li>
       <li>Provide app management shortcuts and optional uninstall assistance</li>
+      <li>Display device, network, Bluetooth, and location-related status and security tips</li>
       <li>Remember your language and in-app settings</li>
+      <li>Load the Privacy Policy and End User License Agreement inside the App via WebView (requires network access)</li>
       <li>Maintain App security, troubleshoot issues, and improve stability</li>
       <li>Respond to your inquiries and feedback</li>
       <li>Comply with applicable laws and enforce our End User License Agreement</li>
@@ -121,12 +124,14 @@
       Denying a permission may limit related functionality.
     </p>
     <ul>
-      <li><strong>Storage / Media access</strong> — scan and clean cache, temporary files, and media content</li>
-      <li><strong>All files access (Manage external storage)</strong> — deep cleaning where scoped storage limits regular access</li>
-      <li><strong>Usage access</strong> — show per-app usage and cache statistics</li>
-      <li><strong>Network state</strong> — check connectivity for optional online features</li>
-      <li><strong>Request delete packages</strong> — assist with uninstalling apps you choose to remove</li>
-      <li><strong>Location / Bluetooth</strong> — only as declared in the App manifest for applicable device or network status features; not used for advertising or unrelated tracking</li>
+      <li><strong>Storage / Media access (READ_EXTERNAL_STORAGE, READ_MEDIA_*)</strong> — scan and clean cache, temporary files, and media content</li>
+      <li><strong>All files access (MANAGE_EXTERNAL_STORAGE)</strong> — deep cleaning where scoped storage limits regular access</li>
+      <li><strong>Usage access (PACKAGE_USAGE_STATS)</strong> — show per-app usage and cache statistics</li>
+      <li><strong>Network (ACCESS_NETWORK_STATE, INTERNET)</strong> — check connectivity; load Privacy Policy and Terms in-app via WebView</li>
+      <li><strong>Wi‑Fi state (ACCESS_WIFI_STATE)</strong> — display Wi‑Fi-related information on the System Info screen</li>
+      <li><strong>Request delete packages (REQUEST_DELETE_PACKAGES)</strong> — assist with uninstalling apps you choose to remove</li>
+      <li><strong>Location (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION)</strong> — System Info and Security Tips features; not used for advertising or unrelated tracking</li>
+      <li><strong>Bluetooth (BLUETOOTH, BLUETOOTH_CONNECT)</strong> — display Bluetooth on/off state on the System Info screen; not used for advertising or unrelated tracking</li>
     </ul>
 
     <h2>6. Local Processing</h2>
